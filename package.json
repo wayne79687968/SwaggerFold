@@ -10,15 +10,28 @@
     "Other"
   ],
   "activationEvents": [
-    "onLanguage:javascript",
-    "onCommand:swaggerfold.foldSwaggerComments"
+    "onLanguage:php",
+    "onCommand:swaggerfold.foldSwaggerComments",
+    "onCommand:swaggerfold.unfoldSwaggerComments",
+    "onCommand:swaggerfold.enableAutoFold"
   ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
       {
         "command": "swaggerfold.foldSwaggerComments",
-        "title": "Fold Swagger Comments"
+        "title": "Fold Swagger Comments",
+        "category": "SwaggerFold"
+      },
+      {
+        "command": "swaggerfold.unfoldSwaggerComments",
+        "title": "Unfold Swagger Comments",
+        "category": "SwaggerFold"
+      },
+      {
+        "command": "swaggerfold.enableAutoFold",
+        "title": "Auto Processing Settings",
+        "category": "SwaggerFold"
       }
     ]
   },

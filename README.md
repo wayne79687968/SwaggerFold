@@ -1,39 +1,155 @@
-# SwaggerFold for Visual Studio Code
+# SwaggerFold - Laravel Swagger Comment Folding Tool
 
-## Introduction
+A VS Code extension designed for Laravel developers to easily manage folding and unfolding of Swagger/OpenAPI comments in PHP files.
 
-SwaggerFold is a dedicated extension for Visual Studio Code designed specifically for developers working with PHP Laravel L5-Swagger. It enhances the code editing experience by providing a clean and focused environment. This extension allows users to effortlessly collapse and expand Swagger annotations, maintaining a neat workspace focused on the most crucial parts of the code.
+## ✨ Features
 
-## Features
+- 🎯 **Smart Detection**: Automatically detects Swagger comment blocks starting with `@OA`
+- 🔽 **One-Click Fold**: Quickly fold all Swagger comments to keep code clean
+- 🔼 **One-Click Unfold**: Quickly unfold all Swagger comments when needed
+- 🚀 **Auto Processing**: Configure automatic folding/unfolding when opening files
+- 🧠 **Smart Memory**: Remembers your manual actions and respects your preferences
+- ⚡ **Lightweight**: Simple, fast, and focused on core functionality
 
-- **Collapse Swagger Annotations**: Quickly hide detailed Swagger API documentation to reduce visual clutter.
-- **Expand Swagger Annotations**: Easily expand all collapsed annotations when details of the API are needed.
-- **Ease of Use**: Toggle the collapsing and expanding of annotations with a simple command.
+## 📦 Installation
 
-## Installation
+1. Open VS Code
+2. Press `Ctrl+Shift+X` to open the Extensions marketplace
+3. Search for "SwaggerFold"
+4. Click Install
 
-1. Open Visual Studio Code.
-2. Go to the Extensions view by clicking on the Extensions icon in the sidebar, or use the shortcut (`Ctrl+Shift+X` on Windows/Linux, `Cmd+Shift+X` on macOS).
-3. In the search bar, type "SwaggerFold".
-4. Find the extension and click on 'Install'.
+## 🚀 Quick Start
 
-## Usage
+### Basic Operations
 
-1. Open any PHP Laravel file containing Swagger annotations.
-2. Use the following commands to collapse or expand Swagger annotations:
-   - To Collapse: Execute the `SwaggerFold: Fold Swagger Comments` command.
-   - To Expand: Re-execute the above command to unfold the annotations.
+1. **Fold Swagger Comments in Current File**
+   - Command Palette: `SwaggerFold: Fold Swagger Comments`
+   - Shortcut: `Ctrl+Shift+P` → type "fold swagger"
 
-   Commands can be run by opening the Command Palette with `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS) and typing the command name.
+2. **Unfold Swagger Comments in Current File**
+   - Command Palette: `SwaggerFold: Unfold Swagger Comments`
 
-## Contributing
+3. **Configure Auto Processing**
+   - Command Palette: `SwaggerFold: Auto Processing Settings`
+   - Choose from three options:
+     - **Auto Fold**: Automatically fold Swagger comments when opening files
+     - **Auto Unfold**: Automatically unfold Swagger comments when opening files
+     - **Disable Auto Processing**: No automatic processing
 
-Your contributions make SwaggerFold better! If you have suggestions for features or have found bugs, please feel free to open issues or pull requests on the GitHub repository.
+### Smart Memory System
 
-## License
+SwaggerFold remembers your manual actions for 5 minutes. If you manually fold or unfold a file, the extension won't override your preference when you switch back to that file within the time window.
 
-This extension is released under the MIT License. For more details, please see the [LICENSE](LICENSE) file.
+## 🎛️ Available Commands
 
-## Contact
+| Command | Description |
+|---------|-------------|
+| `SwaggerFold: Fold Swagger Comments` | Fold Swagger comments in the current file |
+| `SwaggerFold: Unfold Swagger Comments` | Unfold Swagger comments in the current file |
+| `SwaggerFold: Auto Processing Settings` | Configure automatic folding/unfolding behavior |
 
-For any questions or suggestions, please reach out to me via [my GitHub](https://github.com/wayne79687968).
+## 🔧 How It Works
+
+### Swagger Comment Detection
+
+The extension detects Swagger/OpenAPI comments by looking for:
+- Comment blocks containing `@OA` annotations
+- Properly formatted DocBlock comments (`/** ... */`)
+- Standard Laravel/PHP comment structure
+
+### Example Swagger Comment
+
+```php
+/**
+ * @OA\Get(
+ *     path="/api/users",
+ *     summary="Get all users",
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successful operation"
+ *     )
+ * )
+ */
+public function index()
+{
+    return User::all();
+}
+```
+
+## 🎯 Usage Scenarios
+
+### Scenario 1: Daily Development
+```bash
+# Set up auto-fold mode
+SwaggerFold: Auto Processing Settings → Choose "Auto Fold"
+
+# Now all files with Swagger comments will auto-fold when opened
+```
+
+### Scenario 2: Code Review
+```bash
+# Quickly fold all Swagger comments in current file
+SwaggerFold: Fold Swagger Comments
+
+# Focus on business logic code
+```
+
+### Scenario 3: Documentation Work
+```bash
+# Set up auto-unfold mode
+SwaggerFold: Auto Processing Settings → Choose "Auto Unfold"
+
+# All Swagger comments will be visible when opening files
+```
+
+## 🧠 Smart Memory Features
+
+- **5-Minute Memory**: Manual actions are remembered for 5 minutes
+- **Preference Respect**: Auto-processing won't override recent manual actions
+- **Per-File Tracking**: Each file's manual actions are tracked independently
+- **Memory Cleanup**: Option to clear manual action history when changing auto-processing settings
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Extension not working**
+   - Make sure you're working with PHP files
+   - Check that files contain `@OA` annotations
+   - Restart VS Code if needed
+
+2. **Auto-processing not working**
+   - Verify auto-processing is enabled via the settings command
+   - Check if you recently performed manual actions (5-minute memory)
+
+3. **Comments not detected**
+   - Ensure Swagger comments follow DocBlock format (`/** ... */`)
+   - Verify `@OA` annotations are present
+
+## 🔄 Changelog
+
+### v0.0.1
+- 🎉 Initial release
+- 🔽 Basic fold/unfold functionality
+- 🚀 Auto-processing settings
+- 🧠 Smart memory system
+- ⚡ Lightweight and fast
+
+## 📝 License
+
+MIT License
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit issues and pull requests.
+
+## 💡 Tips
+
+- Use auto-fold mode for cleaner code viewing during development
+- Use auto-unfold mode when working extensively with API documentation
+- Manual actions take precedence over auto-processing for 5 minutes
+- The extension only processes files containing actual Swagger comments
+
+---
+
+**Happy coding with cleaner PHP files! 🚀**
