@@ -3,7 +3,7 @@
   "displayName": "SwaggerFold",
   "description": "Effortlessly collapse and expand PHP Laravel L5-Swagger annotations in VS Code. This extension helps keep your workspace neat by focusing only on the code that matters, hiding verbose Swagger documentation blocks with a simple command.",
   "version": "0.0.2",
-  "publisher": "wayne79687968",
+  "publisher": "Skogkatt",
   "repository": {
     "type": "git",
     "url": "https://github.com/wayne79687968/SwaggerFold.git"
